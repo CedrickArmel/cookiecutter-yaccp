@@ -1,0 +1,54 @@
+{
+    "project_name": "Project Name",
+    "repo_name": "{{ cookiecutter.project_name|lower|replace(' ',('_')) }}",
+    "repo_vis": ["public", "private"],
+    "__repo_vis": "{{ cookiecutter.repo_vis }}",
+    "description": "",
+    "package_name": "{{ cookiecutter.project_name|lower|replace(' ',('')) }}",
+    "manage_env": ["Poetry", "User"],
+    "__manage_env": "{{ cookiecutter.manage_env }}",
+    "python_version": "^3.12",
+    "python_path": "",
+    "__python_path": "{{ cookiecutter.python_path }}",
+    "git_init": true,
+    "__git_init": "{{ cookiecutter.git_init }}",
+    "author": "Firstname SURNAME",
+    "email": "author@email.com",
+    "create_repo": true,
+    "__create_repo": "{{ cookiecutter.create_repo }}",
+    "license": [
+        "MIT",
+        "Apache-2.0",
+        "GPLv3",
+        "No license"
+    ],
+    "__prompts__": {
+        "project_name": "Project Name",
+        "repo_name": "Repository Name (Local and in VCS)",
+        "package_name": "Package Name (i.e. import mypackage)",
+        "description": "Describe your Project",
+        "author": "Author full name or GitHub username",
+        "git_init": "Initialize a git repository at the end ?",
+        "create_repo": "Create a GitHub repository?",
+        "python_path": "Provide a /Path/to/python",
+        "email": "Your email address",
+        "manage_env": {
+            "__prompt__": "Virtualenv management",
+            "Poetry": "Self-managed by Poetry",
+            "User": "Create my own environnement"
+        },
+        "license": {
+            "__prompt__": "Select an Open Source license",
+            "MIT": "MIT License",
+            "Apache-2.0": "Apache License 2.0",
+            "GPLv3": "GNU General Public License v3.0",
+            "No license": "This project will not be considered as open-source"
+        },
+        "repo_vis": {
+            "__prompt__": "Select a visibility for you VCS repository",
+            "public": "Public Repository",
+            "private": "Private Repository"
+        },
+        "python_version": "Enter a python version for your project"
+    }
+}

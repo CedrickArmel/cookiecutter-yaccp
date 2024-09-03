@@ -1,0 +1,60 @@
+repos:
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.5.5
+    hooks:
+      - id: insert-license
+        types:
+          - python
+        args:
+          - --license-filepath
+          - LICENSE
+        exclude: ^{{ cookiecutter.repo_name }}
+  - repo: https://github.com/pycqa/isort
+    rev: "5.13.2"
+    hooks:
+      - id: isort
+        name: isort (python)
+        exclude: ^{{ cookiecutter.repo_name }}
+  - repo: https://github.com/psf/black
+    rev: "24.8.0"
+    hooks:
+      - id: black
+        exclude: ^{{ cookiecutter.repo_name }}
+      - id: black-jupyter
+        exclude: ^{{ cookiecutter.repo_name }}
+  - repo: https://github.com/pycqa/flake8
+    rev: "7.1.1"
+    hooks:
+      - id: flake8
+        exclude: ^{{ cookiecutter.repo_name }}
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+        exclude: ^{{ cookiecutter.repo_name }}
+      - id: check-case-conflict
+        exclude: ^{{ cookiecutter.repo_name }}
+      - id: check-docstring-first
+        exclude: ^{{ cookiecutter.repo_name }}
+      - id: check-executables-have-shebangs
+        exclude: ^{{ cookiecutter.repo_name }}
+      - id: check-json
+        exclude: ^{{ cookiecutter.repo_name }}
+      - id: check-merge-conflict
+        exclude: ^{{ cookiecutter.repo_name }}
+      - id: check-toml
+        exclude: ^{{ cookiecutter.repo_name }}
+      - id: check-yaml
+        exclude: ^{{ cookiecutter.repo_name }}
+      - id: detect-private-key
+        exclude: ^{{ cookiecutter.repo_name }}
+      - id: end-of-file-fixer
+        exclude: ^{{ cookiecutter.repo_name }}
+      - id: trailing-whitespace
+        exclude: ^{{ cookiecutter.repo_name }}
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: 'v1.11.2'
+    hooks:
+      - id: mypy
+        args: [--strict, --ignore-missing-imports]
+        exclude: ^{{ cookiecutter.repo_name }}
