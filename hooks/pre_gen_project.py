@@ -28,7 +28,7 @@ import logging
 import re
 import sys
 
-from yaccp.utils import get_logger
+from utils import get_logger
 
 logger = get_logger(__name__)
 logger.setLevel(logging.ERROR)
