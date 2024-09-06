@@ -27,7 +27,7 @@
 import logging
 import subprocess
 
-from .utils import get_logger
+from utils import get_logger
 
 logger = get_logger(__name__)
 logger.setLevel(logging.ERROR)
