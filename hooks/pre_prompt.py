@@ -31,9 +31,8 @@ import subprocess
 import sys
 
 from cookiecutter.generate import generate_context
-from utils import get_logger
 
-logger = get_logger(__name__)
+logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
 
