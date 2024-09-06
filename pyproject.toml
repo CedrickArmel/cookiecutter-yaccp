@@ -11,7 +11,6 @@ description = "Yet another cookiecutter template for Data Science."
 authors = ["Cédrick-Armel Yebouet"]
 license = "MIT license"
 readme = "README.md"
-packages = [{ include = "yaccp", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.12"

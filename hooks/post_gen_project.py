@@ -22,21 +22,19 @@
 
 # flake8: noqa
 # pylint: disable=all
-# mypy: disable-error-code="import-untyped"
+# mypy: disable-error-code="import-untyped,name-defined"
 
 import logging
-import os
 import subprocess
-import sys
 
-from yaccp.utils import get_logger
+from .utils import get_logger
 
 logger = get_logger(__name__)
 logger.setLevel(logging.ERROR)
 
 
 def setup_poetry_env() -> bool:
-    if "{{ cookiecutter.__manage_env }}" == "Poetry" and "{{ cookiecutter.__python_path }}":  # type: ignore[comparison-overlap]
+    if ("{{cookiecutter.__manage_env}}" == "Poetry") and ("{{cookiecutter.__python_path}}" != ""):  # type: ignore[comparison-overlap]
         try:
             subprocess.run(
                 ["poetry", "env", "use", "{{ cookiecutter.__python_path }}"],
@@ -57,7 +55,7 @@ def setup_poetry_env() -> bool:
 
 
 def git_init() -> bool:
-    if "{{ cookiecutter.__git_init }}":
+    if {{cookiecutter.__git_init}}:
         try:
             subprocess.run(["git", "init"])
             return True
@@ -69,7 +67,7 @@ def git_init() -> bool:
 
 
 def create_repo() -> bool:
-    if "{{ cookiecutter.__create_repo }}" and "{{ cookiecutter.__git_init }}":
+    if {{cookiecutter.__create_repo}} and {{cookiecutter.__git_init}}:
         try:
             subprocess.run(
                 [

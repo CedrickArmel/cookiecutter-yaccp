@@ -22,7 +22,7 @@
 
 # flake8: noqa
 # pylint: disable=all
-# mypy: disable-error-code="import-untyped"
+# mypy: disable-error-code="import-untyped,call-overload"
 
 import logging
 import re
@@ -34,8 +34,8 @@ logger = get_logger(__name__)
 logger.setLevel(logging.ERROR)
 
 MODULE_REGEX = r"^[a-z]+(_[a-z]+)*$"
-EMAIL = "{{ cookiecutter.email }}"
-PACKAGE_NAME = "{{ cookiecutter.package_name }}"
+EMAIL = "{{cookiecutter.email}}"
+PACKAGE_NAME = "{{cookiecutter.package_name}}"
 
 
 def is_valide_package_name() -> bool:
