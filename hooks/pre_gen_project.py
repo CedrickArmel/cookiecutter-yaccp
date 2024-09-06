@@ -28,9 +28,7 @@ import logging
 import re
 import sys
 
-from utils import get_logger
-
-logger = get_logger(__name__)
+logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
 MODULE_REGEX = r"^[a-z]+(_[a-z]+)*$"
