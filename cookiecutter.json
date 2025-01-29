@@ -1,6 +1,7 @@
 {
     "project_name": "Project Name",
     "repo_name": "{{ cookiecutter.project_name|lower|replace(' ',('_')) }}",
+    "project_id": "{{ cookiecutter.repo_name|replace('_',('-')) }}",
     "repo_vis": ["public", "private"],
     "__repo_vis": "{{ cookiecutter.repo_vis }}",
     "description": "",

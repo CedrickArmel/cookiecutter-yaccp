@@ -1,0 +1,6 @@
+gcp_iam_infra_sa_account_id = "{{cookiecutter.project_id}}-adc-infra-iam-owner"
+gcp_project                 = "{{cookiecutter.project_id}}"
+gcp_region                  = "your-region"
+hcp_terraform_org_name      = "your-tf-org"
+hcp_terraform_ws_id         = "ws-xxxxxxxxxxxxxxxxx"
+hcp_terraform_ws_name       = "creds-{{cookiecutter.project_id}}"
